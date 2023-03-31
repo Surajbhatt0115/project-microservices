@@ -3,6 +3,7 @@ package com.example.airline.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.airline.entity.Booking;
 //import com.example.airline.data.BookingFlight;
 import com.example.airline.repository.BookingRepository;
+
+
+//@CrossOrigin(value="http://localhost:4200")
 @RestController
 @RequestMapping("/booking")
 public class BookingController {
@@ -53,10 +57,10 @@ public class BookingController {
 	List<Booking> bookinglist=bookingRepository.getallDetail();
 		return bookinglist;	
 	}
-	
-	@GetMapping("/getbookingdetail/{email}")
-	public List<Booking> getBookingDetail(@PathVariable("email") String email){
-		List<Booking> bookings=bookingRepository.getBookingDetail(email);
-		return bookings;
-	}
+//	
+//	@GetMapping("/getbookingdetail/{email}")
+//	public List<Booking> getBookingDetail(@PathVariable("email") String email){
+//		List<Booking> bookings=bookingRepository.getBookingDetail(email);
+//		return bookings;
+//	}
 }
