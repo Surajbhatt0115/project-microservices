@@ -47,6 +47,41 @@ public class Booking {
 	@Column(name="price")
 	private int price;
 	
+	@Column(name="dateofbirth")
+	private String dateofbirth;
+	
+	@Column(name="address")
+	private String address;
+	
+	
+	public String getDateofbirth() {
+		return dateofbirth;
+	}
+
+
+
+
+	public void setDateofbirth(String dateofbirth) {
+		this.dateofbirth = dateofbirth;
+	}
+
+
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+
+
 	//constructor
 	public Booking(){
 		
@@ -56,9 +91,11 @@ public class Booking {
 	
 	
 
+
+
 	public Booking(String flightnumber, String flightName, String takeOfTime, String landingTime, String source,
-			String destination, String name, String email, int price) {
-		
+			String destination, String name, String email, int price, String dateofbirth, String address) {
+		super();
 		this.flightnumber = flightnumber;
 		this.flightName = flightName;
 		this.takeOfTime = takeOfTime;
@@ -68,6 +105,8 @@ public class Booking {
 		this.name = name;
 		this.email = email;
 		this.price = price;
+		this.dateofbirth = dateofbirth;
+		this.address = address;
 	}
 
 

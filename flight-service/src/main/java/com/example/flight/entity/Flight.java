@@ -36,6 +36,8 @@ public class Flight {
 	@Column(name="destination")
 	private String destination;
 	
+	@Column(name="price")
+	private String price;
 	//constructor
 	public Flight() {
 		
@@ -43,7 +45,7 @@ public class Flight {
 	
 	
 	public Flight(String flightnumber, String flightName, String takeOfTime, String landingTime, String source,
-			String destination) {
+			String destination,String price) {
 	
 		this.flightnumber = flightnumber;
 		this.flightName = flightName;
@@ -51,7 +53,7 @@ public class Flight {
 		this.landingTime = landingTime;
 		this.source = source;
 		this.destination = destination;
-	
+		this.price=price;
 	}
 	/*
 	 * 
@@ -60,6 +62,26 @@ public class Flight {
 	 * 
 	 * public void setBooking(Booking booking) { this.booking = booking; }
 	 */
+
+	public String getFlightnumber() {
+		return flightnumber;
+	}
+
+
+	public void setFlightnumber(String flightnumber) {
+		this.flightnumber = flightnumber;
+	}
+
+
+	public String getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
 
 	public String getFlightName() {
 		return flightName;
