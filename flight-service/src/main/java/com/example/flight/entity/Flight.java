@@ -1,6 +1,5 @@
 package com.example.flight.entity;
 
-//import org.springframework.beans.factory.annotation.Autowired;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,8 +10,6 @@ import jakarta.persistence.Table;
 @Table(name = "flightdetail")
 public class Flight {
 
-//	@Autowired
-//	private Booking booking;
 
 	@jakarta.persistence.Id
 	@Column(name="flightnumber")
@@ -36,14 +33,18 @@ public class Flight {
 	@Column(name="destination")
 	private String destination;
 	
+	@Column(name="price")
+	private String price;
+	
 	//constructor
 	public Flight() {
 		
 	}
 	
+	//Parametrized constructor
 	
 	public Flight(String flightnumber, String flightName, String takeOfTime, String landingTime, String source,
-			String destination) {
+			String destination,String price) {
 	
 		this.flightnumber = flightnumber;
 		this.flightName = flightName;
@@ -51,15 +52,29 @@ public class Flight {
 		this.landingTime = landingTime;
 		this.source = source;
 		this.destination = destination;
-	
+		this.price=price;
 	}
-	/*
-	 * 
-	 * public Booking getBooking() { return booking; }
-	 * 
-	 * 
-	 * public void setBooking(Booking booking) { this.booking = booking; }
-	 */
+// providing getter and setter.
+
+	public String getFlightnumber() {
+		return flightnumber;
+	}
+
+
+	public void setFlightnumber(String flightnumber) {
+		this.flightnumber = flightnumber;
+	}
+
+
+	public String getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
 
 	public String getFlightName() {
 		return flightName;
