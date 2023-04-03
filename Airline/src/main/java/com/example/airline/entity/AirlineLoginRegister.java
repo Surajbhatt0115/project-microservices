@@ -25,7 +25,7 @@ public class AirlineLoginRegister {
 		
 	}
 	
-	
+	/* providing getter and setter for instance variable*/
 	public String getName() {
 		return name;
 	}

@@ -11,54 +11,70 @@ import jakarta.persistence.Table;
 
 @Entity
 @IdClass(CompositeKeyforBooking.class)
-@Table(name="bookingflight")
+@Table(name = "bookingflight")
 public class Booking {
 
-
 	@Id
-	@Column(name="flightnumber")
+	@Column(name = "flightnumber")
 	private String flightnumber;
-	
-	@Column(name="flightname")
+
+	@Column(name = "flightname")
 	private String flightName;
-	
-	
-	
-	@Column(name="takeoftime")
-	private String  takeOfTime;
-	
-	@Column(name="landingtime")
-	private String  landingTime;
-	
-	
-	@Column(name="source")
+
+	@Column(name = "takeoftime")
+	private String takeOfTime;
+
+	@Column(name = "landingtime")
+	private String landingTime;
+
+	@Column(name = "source")
 	private String source;
-	
-	@Column(name="destination")
+
+	@Column(name = "destination")
 	private String destination;
 
 	@Id
-	@Column(name="name")
+	@Column(name = "name")
 	private String name;
 	@Id
-	@Column(name="email")
+	@Column(name = "email")
 	private String email;
-	
-	@Column(name="price")
+
+	@Column(name = "price")
 	private int price;
-	
-	//constructor
-	public Booking(){
-		
-		
+
+	@Column(name = "dateofbirth")
+	private String dateofbirth;
+
+	@Column(name = "address")
+	private String address;
+
+	/*-------------------- providing getter and setter for for each instance variable---------------------------*/
+
+	public String getDateofbirth() {
+		return dateofbirth;
 	}
-	
-	
-	
+
+	public void setDateofbirth(String dateofbirth) {
+		this.dateofbirth = dateofbirth;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	// constructor
+	public Booking() {
+
+	}
 
 	public Booking(String flightnumber, String flightName, String takeOfTime, String landingTime, String source,
-			String destination, String name, String email, int price) {
-		
+			String destination, String name, String email, int price, String dateofbirth, String address) {
+		super();
 		this.flightnumber = flightnumber;
 		this.flightName = flightName;
 		this.takeOfTime = takeOfTime;
@@ -68,10 +84,9 @@ public class Booking {
 		this.name = name;
 		this.email = email;
 		this.price = price;
+		this.dateofbirth = dateofbirth;
+		this.address = address;
 	}
-
-
-
 
 	public String getFlightnumber() {
 		return flightnumber;
@@ -145,8 +160,4 @@ public class Booking {
 		this.price = price;
 	}
 
-
-
-	
-	
 }
